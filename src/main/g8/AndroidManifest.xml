@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.github.fill_in_dir"
+          package="$packagename$"
           android:versionName="\${project.version}"
           android:versionCode="\${versionCode}">
   <application android:label="@string/app_name" android:icon="@drawable/icon"
                android:theme="@android:style/Theme.NoTitleBar"
                android:debuggable="\${android.debuggable}"
-               android:backupAgent="SampleBackupAgent" android:restoreAnyVersion="true">
+               android:backupAgent="$appnamewithoutspaces$BackupAgent" android:restoreAnyVersion="true">
     <meta-data android:name="com.google.android.backup.api_key"
                android:value="AEdPqrEAAAAIcxGGphfCAELViZfpCfJrCjBiiFRBWp29qg0Bag" />
-    <activity android:name=".BookListActivity">
+    <activity android:name=".$entitynamewithoutspaces$ListActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".BookActivity" android:label="@string/app_name"/>
+    <activity android:name=".$entitynamewithoutspaces$Activity" android:label="@string/app_name"/>
   </application>
   <uses-sdk android:minSdkVersion="8" />
 </manifest>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">sample-app</string>
-    <string name="add_book">Add Book</string>
-    <string name="edit_book">Edit Book</string>
+    <string name="app_name">$name$</string>
+    <string name="add_entity">Add $entitynamewithoutspaces$</string>
+    <string name="edit_entity">Edit $entitynamewithoutspaces$</string>
 </resources>

@@ -17,16 +17,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.epabst.scala-android-crud</groupId>
-  <artifactId>sample-app</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <groupId>$groupId$</groupId>
+  <artifactId>$artifactId$</artifactId>
+  <version>$version$</version>
   <packaging>apk</packaging>
-  <name>sample-app</name>
-  <scm>
-    <connection>scm:git:https://epabst@github.com/epabst/scala-android-crud.git</connection>
-    <developerConnection>scm:git:https://epabst@github.com/epabst/scala-android-crud.git</developerConnection>
-    <url>https://github.com/epabst/scala-android-crud</url>
-  </scm>
+  <name>$name$</name>
+  <description>$description$</description>
   <properties>
     <environment>development</environment>
     <android.obfuscate>false</android.obfuscate>
