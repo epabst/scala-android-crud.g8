@@ -1,6 +1,6 @@
-package com.github.fill_in_dir.fill_in_subdir
+package com.github.fill_in_dir
 
-import com.github.scala_android.crud.{CrudBackupAgent, CrudApplication}
+import com.github.scala.android.crud.{CrudBackupAgent, CrudApplication}
 
 /**
  * The fill_in_subdir application

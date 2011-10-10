@@ -1,4 +1,4 @@
-package com.github.scala.android.crud.sample
+package com.github.fill_in_dir
 
 import com.github.scala.android.crud._
 import persistence.CursorField._
@@ -12,7 +12,7 @@ import com.github.scala.android.crud.ParentField._
  * @book pabstec
  */
 
-object BookCrudType extends CrudType {
+object BookCrudType extends CrudType with SQLiteCrudType {
   def entityName = "Book"
 
   def valueFields = List(
