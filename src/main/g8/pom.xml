@@ -32,7 +32,7 @@
     <android.obfuscate>false</android.obfuscate>
     <scala.version>2.8.1</scala.version>
     <android.version>2.2.1</android.version>
-    <scala-android-crud.version>${project.version}</scala-android-crud.version>
+    <scala-android-crud.version>\${project.version}</scala-android-crud.version>
     <!-- set a custom format that is guaranteed to grow as a Long number, so it can be used as version code
     in the AndroidManifest.xml -->
     <maven.build.timestamp.format>yyMMdddHHmm</maven.build.timestamp.format>
@@ -40,7 +40,7 @@
     http://jira.codehaus.org/browse/MRESOURCES-99 and also more readable -->
     <!-- switched to use buildnumber-maven-plugin instead of maven.build.timestamp since the
     version of Hudson I'm using has a bug that makes it not work.-->
-    <versionCode>${buildNumber}</versionCode>
+    <versionCode>\${buildNumber}</versionCode>
   </properties>
   <repositories>
     <repository>
@@ -61,9 +61,9 @@
     <sourceDirectory>src/main/scala</sourceDirectory>
     <resources>
       <resource>
-        <directory>${project.basedir}</directory>
+        <directory>\${project.basedir}</directory>
         <filtering>true</filtering>
-        <targetPath>${project.build.directory}/filtered-manifest</targetPath>
+        <targetPath>\${project.build.directory}/filtered-manifest</targetPath>
         <includes>
           <include>AndroidManifest.xml</include>
         </includes>
@@ -83,7 +83,7 @@
           </execution>
         </executions>
         <configuration>
-          <format>{0,date,${maven.build.timestamp.format}}</format>
+          <format>{0,date,\${maven.build.timestamp.format}}</format>
           <items>
             <item>timestamp</item>
           </items>
@@ -149,11 +149,11 @@
           <maxMemory>256m</maxMemory>
           <injar>android-classes</injar>
           <libs>
-            <lib>${rt.jar.path}</lib>
-            <lib>${jsse.jar.path}</lib>
+            <lib>\${rt.jar.path}</lib>
+            <lib>\${jsse.jar.path}</lib>
           </libs>
           <skip>false</skip>
-          <obfuscate>${android.obfuscate}</obfuscate>
+          <obfuscate>\${android.obfuscate}</obfuscate>
           <addMavenDescriptor>false</addMavenDescriptor>
           <options>
             <!-- which classes are we keeping around, android specific -->
@@ -173,9 +173,9 @@
             <option><![CDATA[-keepclasseswithmembers class * {
                               public <init> (android.content.Context, android.util.AttributeSet, int); } ]]></option>
             <option><![CDATA[-keepclassmembers class * implements android.os.Parcelable {
-                              static android.os.Parcelable$Creator *; } ]]></option>
+                              static android.os.Parcelable\$Creator *; } ]]></option>
             <!-- viewId(Class, String) uses reflection, and might be in use. -->
-            <option><![CDATA[-keep class **.R$* { public static <fields>; } ]]></option>
+            <option><![CDATA[-keep class **.R\$* { public static <fields>; } ]]></option>
             <option><![CDATA[-keepclasseswithmembernames class * { native <methods>; } ]]></option>
             <option><![CDATA[-keepclassmembers class * extends java.lang.Enum {
                               public static **[] values();
@@ -221,9 +221,9 @@
         <artifactId>maven-android-plugin</artifactId>
         <version>2.9.0-beta-2</version>
         <configuration>
-          <androidManifestFile>${project.build.directory}/filtered-manifest/AndroidManifest.xml</androidManifestFile>
-          <assetsDirectory>${project.basedir}/assets</assetsDirectory>
-          <resourceDirectory>${project.basedir}/res</resourceDirectory>
+          <androidManifestFile>\${project.build.directory}/filtered-manifest/AndroidManifest.xml</androidManifestFile>
+          <assetsDirectory>\${project.basedir}/assets</assetsDirectory>
+          <resourceDirectory>\${project.basedir}/res</resourceDirectory>
           <sdk>
             <platform>8</platform>
           </sdk>
@@ -336,12 +336,12 @@
                   <removeExistingSignatures>true</removeExistingSignatures>
                   <archiveDirectory/>
                   <includes>
-                    <include>${project.build.directory}/${project.artifactId}.apk</include>
+                    <include>\${project.build.directory}/\${project.artifactId}.apk</include>
                   </includes>
-                  <keystore>${sign.keystore}</keystore>
-                  <alias>${sign.alias}</alias>
-                  <storepass>${sign.storepass}</storepass>
-                  <keypass>${sign.keypass}</keypass>
+                  <keystore>\${sign.keystore}</keystore>
+                  <alias>\${sign.alias}</alias>
+                  <storepass>\${sign.storepass}</storepass>
+                  <keypass>\${sign.keypass}</keypass>
                   <verbose>true</verbose>
                 </configuration>
               </execution>
@@ -358,8 +358,8 @@
               </sign>
               <zipalign>
                 <verbose>true</verbose>
-                <inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
-                <outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk
+                <inputApk>\${project.build.directory}/\${project.artifactId}.apk</inputApk>
+                <outputApk>\${project.build.directory}/\${project.artifactId}-signed-aligned.apk
                 </outputApk>
               </zipalign>
             </configuration>
@@ -379,12 +379,12 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>${project.build.directory}/${project.artifactId}-signed-aligned.apk</file>
+                  <file>\${project.build.directory}/\${project.artifactId}-signed-aligned.apk</file>
                   <type>apk</type>
                   <classifier>signed-aligned</classifier>
                 </artifact>
                 <artifact>
-                  <file>${project.build.directory}/proguard_map.txt</file>
+                  <file>\${project.build.directory}/proguard_map.txt</file>
                   <type>map</type>
                   <classifier>release</classifier>
                 </artifact>
@@ -415,8 +415,8 @@
         </os>
       </activation>
       <properties>
-        <rt.jar.path>${java.home}/lib/rt.jar</rt.jar.path>
-        <jsse.jar.path>${java.home}/lib/jsse.jar</jsse.jar.path>
+        <rt.jar.path>\${java.home}/lib/rt.jar</rt.jar.path>
+        <jsse.jar.path>\${java.home}/lib/jsse.jar</jsse.jar.path>
       </properties>
     </profile>
     <!-- mac profile has to be after unix since running on mac will trigger both -->
@@ -431,8 +431,8 @@
         <!-- absolute path -->
         <!--<rt.jar.path>/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Classes/classes.jar</rt.jar.path>-->
         <!-- or with JAVA_HOME /System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/ -->
-        <rt.jar.path>${java.home}/../Classes/classes.jar</rt.jar.path>
-        <jsse.jar.path>${java.home}/../Classes/jsse.jar</jsse.jar.path>
+        <rt.jar.path>\${java.home}/../Classes/classes.jar</rt.jar.path>
+        <jsse.jar.path>\${java.home}/../Classes/jsse.jar</jsse.jar.path>
       </properties>
     </profile>
     <profile>
@@ -443,8 +443,8 @@
         </os>
       </activation>
       <properties>
-        <rt.jar.path>${java.home}/lib/rt.jar</rt.jar.path>
-        <jsse.jar.path>${java.home}/lib/jsse.jar</jsse.jar.path>
+        <rt.jar.path>\${java.home}/lib/rt.jar</rt.jar.path>
+        <jsse.jar.path>\${java.home}/lib/jsse.jar</jsse.jar.path>
       </properties>
     </profile>
 
@@ -462,13 +462,13 @@
     <dependency>
       <groupId>com.google.android</groupId>
       <artifactId>android</artifactId>
-      <version>${android.version}</version>
+      <version>\${android.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.scala-lang</groupId>
       <artifactId>scala-library</artifactId>
-      <version>${scala.version}</version>
+      <version>\${scala.version}</version>
     </dependency>
     <dependency>
       <!-- this is before sl4fj-android in the classpath since the android one fails during unit tests w/o the real android -->
@@ -480,12 +480,12 @@
     <dependency>
       <groupId>com.github.epabst.scala-android-crud</groupId>
       <artifactId>scala-android-crud</artifactId>
-      <version>${scala-android-crud.version}</version>
+      <version>\${scala-android-crud.version}</version>
     </dependency>
     <dependency>
       <groupId>com.github.epabst.scala-android-crud</groupId>
       <artifactId>scala-android-crud</artifactId>
-      <version>${scala-android-crud.version}</version>
+      <version>\${scala-android-crud.version}</version>
       <type>apklib</type>
     </dependency>
     <dependency>
