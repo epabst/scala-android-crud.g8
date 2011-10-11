@@ -60,6 +60,7 @@
 
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
+    <testSourceDirectory>src/test/scala</testSourceDirectory>
     <resources>
       <resource>
         <directory>\${project.basedir}</directory>
