@@ -1,6 +1,6 @@
 package $packagename$
 
-import com.github.scala.android.crud.{CrudBackupAgent, CrudApplication}
+import com.github.scala.android.crud.{CrudType, CrudBackupAgent, CrudApplication}
 
 /**
   * The $name$ application.
@@ -9,7 +9,7 @@ import com.github.scala.android.crud.{CrudBackupAgent, CrudApplication}
 object $appnamewithoutspaces$Application extends CrudApplication {
   val name = "$name$"
 
-  def allEntities = List($entitynamewithoutspaces$CrudType) //TODO Add other entities here
+  def allEntities = List[CrudType]($entitynamewithoutspaces$CrudType) //TODO Add other entities here
 }
 
 /**
