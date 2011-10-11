@@ -12,6 +12,9 @@ _dump
 *.log
 tm*.lck
 tmp
+*.iws
+*.ipr
+*.iml
 .project
 .settings
 .classpath
