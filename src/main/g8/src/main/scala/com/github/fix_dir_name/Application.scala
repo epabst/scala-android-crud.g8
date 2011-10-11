@@ -3,8 +3,8 @@ package $packagename$
 import com.github.scala.android.crud.{CrudBackupAgent, CrudApplication}
 
 /**
- * The fill_in_subdir application
- */
+  * The $name$ application.
+  */
 
 object $appnamewithoutspaces$Application extends CrudApplication {
   val name = "$name$"
@@ -12,4 +12,7 @@ object $appnamewithoutspaces$Application extends CrudApplication {
   def allEntities = List($entitynamewithoutspaces$CrudType) //TODO Add other entities here
 }
 
+/**
+  *  The Backup Agent that works with the Google Android Backup Service.
+  */ 
 class $appnamewithoutspaces$BackupAgent extends CrudBackupAgent($appnamewithoutspaces$Application)
