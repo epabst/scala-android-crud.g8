@@ -8,7 +8,7 @@
                android:debuggable="\${android.debuggable}"
                android:backupAgent="$appnamewithoutspaces$BackupAgent" android:restoreAnyVersion="true">
     <meta-data android:name="com.google.android.backup.api_key"
-               android:value="AEdPqrEAAAAIcxGGphfCAELViZfpCfJrCjBiiFRBWp29qg0Bag" />
+               android:value="TODO: get a backup key from http://code.google.com/android/backup/signup.html and put it here." />
     <activity android:name=".$entitynamewithoutspaces$ListActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
