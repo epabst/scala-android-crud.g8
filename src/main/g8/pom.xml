@@ -237,13 +237,6 @@
         <extensions>true</extensions>
         <executions>
           <execution>
-            <id>startEmulator</id>
-            <phase>initialize</phase>
-            <goals>
-              <goal>emulator-start</goal>
-            </goals>
-          </execution>
-          <execution>
             <id>alignApk</id>
             <phase>package</phase>
             <goals>
