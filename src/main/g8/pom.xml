@@ -23,11 +23,11 @@
   <packaging>apk</packaging>
   <name>$name$</name>
   <description>$description$</description>
-  <scm>
+  <!--<scm>
     <connection>scm:git:https://put-url-here</connection>
     <developerConnection>scm:git:https://put-url-here</developerConnection>
     <url>https://put-url-here</url>
-  </scm>
+  </scm>-->
   <properties>
     <environment>development</environment>
     <android.obfuscate>false</android.obfuscate>
