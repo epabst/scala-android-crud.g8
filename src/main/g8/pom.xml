@@ -295,6 +295,12 @@
             <configuration>
               <mainClass>com.github.myapp.GenerateLayouts</mainClass>
               <classpathScope>test</classpathScope>
+              <systemProperties>
+                <systemProperty>
+                  <key>user.dir</key>
+                  <value>\${basedir}</value>
+                </systemProperty>
+              </systemProperties>
             </configuration>
           </plugin>
         </plugins>
