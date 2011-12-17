@@ -33,10 +33,6 @@ object $entitynamewithoutspaces$CrudType extends CrudType with SQLiteCrudType {
 
   def activityClass = classOf[$entitynamewithoutspaces$Activity]
   def listActivityClass = classOf[$entitynamewithoutspaces$ListActivity]
-
-  def cancelItemString = res.R.string.cancel_item
-  def editItemString = R.string.edit_entity
-  def addItemString = R.string.add_entity
 }
 
 class $entitynamewithoutspaces$ListActivity extends CrudListActivity($entitynamewithoutspaces$CrudType, $appnamewithoutspaces$Application)
